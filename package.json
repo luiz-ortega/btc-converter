@@ -10,14 +10,19 @@
   },
   "preferGlobal": true,
   "bin": {
-    "btc-converter" : "bin/main.js"
+    "btc-converter": "bin/main.js"
   },
   "nyc": {
     "functions": 80,
     "lines": 80,
     "check-coverage": true,
-    "reporter": ["text", "html"],
-    "exclude": ["tests/**"]
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
   },
   "scripts": {
     "clear": "rimraf lib",
@@ -46,11 +51,13 @@
   },
   "homepage": "https://github.com/luiz-ortega/btc-converter#readme",
   "devDependencies": {
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0",
     "babel-preset-env": "^1.7.0",
     "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.1",
     "husky": "^4.2.3",
     "mocha": "^7.1.0",
