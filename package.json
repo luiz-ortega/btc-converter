@@ -2,7 +2,7 @@
   "name": "btc-converter",
   "version": "1.0.0",
   "description": "A CLI to convert Bitcoin to any currency provided.",
-  "main": "index.js",
+  "main": "src/main.js",
   "hooks": {
     "pre-commit": "npm test",
     "pre-push": "npm run lint && npm run test:coverage",
@@ -51,10 +51,11 @@
   },
   "homepage": "https://github.com/luiz-ortega/btc-converter#readme",
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/register": "^7.9.0",
     "babel-preset-env": "^1.7.0",
-    "babel-register": "^6.26.0",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
@@ -67,5 +68,8 @@
     "hooks": {
       "pre-push": "npm run lint"
     }
+  },
+  "dependencies": {
+    "commander": "^5.0.0"
   }
 }
