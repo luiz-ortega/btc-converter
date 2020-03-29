@@ -19,9 +19,9 @@
       "no-console": "off",
       "no-unused-vars": "off",
       "no-unused-expressions": "off",
-      "consistent-return": "off"
+      "consistent-return": "off",
       // "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
-      // "import/prefer-default-export": "off"
+      "import/prefer-default-export": "off"
       // "comma-dangle": "off",
       // "no-confusing-arrow": "off",
       // "implicit-arrow-linebreak": "off"
