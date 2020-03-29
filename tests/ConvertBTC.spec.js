@@ -51,21 +51,33 @@ describe('ConvertBTC', () => {
     }, 800);
   });
 
-  // it('should do return BRL as currency and 10 as amount default...', () => {
-  //   expect(convertBTC('BRL', 10)).to.be.equal('10 BTC to BRL = 2000.00');
-  // });
 
-  // it('should use currency BRL and 10 as amount default', (done) => {
-  //   nock(`${API_URL}`)
-  //     .get('/tobtc')
-  //     .query({ currency: 'BRL', value: 10 })
-  //     .reply(200, responseMock);
+  it('should use currency BRL and 10 as amount default', (done) => {
+    nock(`${API_URL}`)
+      .get('/tobtc')
+      .query({ currency: 'BRL', value: 10 })
+      .reply(200, responseMock);
 
-  //   convertBTC();
+    convertBTC('BRL', 10);
 
-  //   setTimeout(() => {
-  //     expect(consoleStub).to.have.calledWith('10 BTC to BRL = 0.00033172');
-  //     done();
-  //   }, 300);
-  // });
+    setTimeout(() => {
+      expect(consoleStub).to.have.calledWith(`10 BTC to BRL = ${responseMock}`);
+      done();
+    }, 800);
+  });
+
+
+  it('should message user when API reply with error', (done) => {
+    nock(`${API_URL}`)
+      .get('/tobtc')
+      .query({ currency: 'BRL', value: 10 })
+      .replyWithError('Error');
+
+    convertBTC('BR');
+
+    setTimeout(() => {
+      expect(consoleStub).to.have.calledWith('Something went wrong with api. Try again in a few minutes.');
+      done();
+    }, 800);
+  });
 });
