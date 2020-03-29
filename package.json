@@ -28,8 +28,8 @@
     "clear": "rimraf lib",
     "build": "npm run clear && ./node_modules/.bin/babel --out-dir lib src",
     "build:watch": "npm run build -- --watch",
-    "build:umd": "./node_modules/.bin/webpack --output-filename spotify-wrapper.umd.js --mode=development",
-    "build:umd:min": "./node_modules/.bin/webpack --output-filename spotify-wrapper.umd.min.js --mode=production",
+    "build:umd": "./node_modules/.bin/webpack --output-filename btc-convert.umd.js --mode=development",
+    "build:umd:min": "./node_modules/.bin/webpack --output-filename btc-convert.umd.min.js --mode=production",
     "build:all": "npm run build && npm run build:umd && npm run build:umd:min",
     "lint": "./node_modules/.bin/eslint src/*js",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register --reporter nyan",
@@ -55,7 +55,6 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.0",
     "@babel/register": "^7.9.0",
-    "babel-preset-env": "^1.7.0",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
     "eslint-config-airbnb-base": "^14.1.0",
@@ -70,6 +69,7 @@
     }
   },
   "dependencies": {
-    "commander": "^5.0.0"
+    "commander": "^5.0.0",
+    "webpack": "^4.42.1"
   }
 }
